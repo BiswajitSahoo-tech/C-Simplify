@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        #lan-sel {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        #code{
+            width: 1200px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div id="lan-sel">
+        <label for="cars">Language:</label>
+        <select name="lan-list" id="lan-list" autofocus>
+            <option value="c">c</option>
+            <option value="cpp">c++</option>
+            <option value="cpp14">c++ 14</option>
+            <option value="cpp17">c++ 17</option>
+            <option value="java">java</option>
+            <option value="php">php</option>
+            <!-- <option value="audi">perl</option>
+            <option value="python2">python 2</option>
+            <option value="python3">python 3</option>
+            <option value="audi">ruby</option>
+            <option value="audi">go</option>
+            <option value="audi">pascal</option>
+            <option value="audi">c#</option>
+            <option value="audi">haskel</option>
+            <option value="audi">objective-c</option>
+            <option value="audi">swift</option>
+            <option value="audi">groovy</option>
+            <option value="audi">brainfuck</option>
+            <option value="audi">lua</option>
+            <option value="audi">tcl</option>
+            <option value="audi">rust</option>
+            <option value="audi">hack</option>
+            <option value="audi">fortran</option>
+            <option value="audi">d</option>
+            <option value="audi">ada</option>
+            <option value="audi">r</option>
+            <option value="audi">cobol</option>
+            <option value="audi">dart</option>
+            <option value="audi">nodejs</option>
+            <option value="audi">clojure</option>
+            <option value="audi">coffeescript</option> -->
+        </select>
+            
+        
+    </div>
+    <div id = 'parent'>
+
+        
+        <iframe id='code' src="cpp.html" title="ide"></iframe>
+
+    </div>
+    <script>
+
+        const redef = ()=>{
+            document.querySelector('#lan-list').addEventListener('change' , (event)=>{
+                
+                const elm = document.getElementById('code')  
+                if( event.target.value === "cpp" || event.target.value === "cpp14" ||event.target.value === "cpp17" ){
+                    elm.setAttribute('src','cpp.html')
+                }       
+                else if( event.target.value === 'java') {
+                    elm.setAttribute('src','java.html')
+                }
+                else if( event.target.value === "python2" || event.target.value === "python3"){
+                    elm.setAttribute('src','python.html')
+                }
+                else if( event.target.value === 'php' ){
+                    elm.setAttribute('src' , 'php.html')
+                }
+                
+            })
+        }
+        redef();
+
+    </script>
+
+    
+    
+</body>
+</html>
